@@ -1,0 +1,23 @@
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8090
+  servlet:
+    # 应用的访问路径
+    context-path: /lantian-boot
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # 最大连接数，默认为8192
+    max-connections: 8192
+    # 连接数满后的排队数，默认为100
+    accept-count: 100
+    threads:
+      # 请求处理线程的最大数量
+      max: 200
+      # 请求处理线程的最小数量
+      min-spare: 10
+spring:
+  profiles:
+    # 激活的配置文件
+    active: dev
