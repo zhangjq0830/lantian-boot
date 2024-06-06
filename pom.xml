@@ -11,6 +11,7 @@
   <modules>
     <module>lantian-server</module>
     <module>lantian-system</module>
+    <module>lantian-framework</module>
   </modules>
 
   <parent>

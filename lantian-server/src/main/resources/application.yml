@@ -13,9 +13,9 @@ server:
     # 连接数满后的排队数，默认为100
     accept-count: 100
     threads:
-      # 请求处理线程的最大数量
+      # 请求处理线程的最大数量，默认为200
       max: 200
-      # 请求处理线程的最小数量
+      # 请求处理线程的最小数量，默认为10
       min-spare: 10
 spring:
   profiles:
