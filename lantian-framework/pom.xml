@@ -11,13 +11,35 @@
 
   <artifactId>lantian-framework</artifactId>
 
+  <description>框架核心</description>
+
   <dependencies>
 
+    <!--  JSON工具  -->
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-json</artifactId>
+    </dependency>
+
+    <!-- Http客户端工具类 -->
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-http</artifactId>
+    </dependency>
+
+    <!-- 核心方法 -->
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-core</artifactId>
+    </dependency>
+
+    <!--  lombok支持，简化代码  -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
     </dependency>
 
+    <!-- SpringBoot Web容器 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>

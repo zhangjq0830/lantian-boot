@@ -11,6 +11,8 @@
 
   <artifactId>lantian-server</artifactId>
 
+  <description>项服务启动模块</description>
+
   <dependencies>
     <dependency>
       <groupId>org.lantian</groupId>

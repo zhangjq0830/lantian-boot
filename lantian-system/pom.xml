@@ -11,6 +11,8 @@
 
   <artifactId>lantian-system</artifactId>
 
+  <description>系统管理模块</description>
+
   <dependencies>
     <dependency>
       <groupId>org.lantian</groupId>
