@@ -25,7 +25,7 @@ public class AddressUtils {
   public static final String UNKNOWN = "未知";
 
 
-  public static String getRealAddressByIp(String ip) {
+  public static String getRealAddressByIP(String ip) {
     // 内网不查询
     if (NetUtil.isInnerIP(ip)) {
       return "内网IP";
@@ -41,7 +41,7 @@ public class AddressUtils {
         return UNKNOWN;
       }
       Address address = JSONUtil.toBean(response, Address.class);
-      return String.format("%s %s", address.getPro(), address.getCity());
+      return StrUtil.format("{}-{}", address.getPro(), address.getCity());
     } catch (Exception e) {
       log.error("根据IP获取地址异常 {}", ip);
     }
