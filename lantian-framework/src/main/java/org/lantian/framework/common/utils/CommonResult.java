@@ -39,7 +39,7 @@ public class CommonResult<T> {
    * @return 成功消息
    */
   public static <T> CommonResult<T> ok() {
-    return new CommonResult<>(HttpStatus.HTTP_OK, "操作成功", null);
+    return ok("操作成功");
   }
 
   /**
@@ -68,7 +68,7 @@ public class CommonResult<T> {
    * @return 失败消息
    */
   public static <T> CommonResult<T> error() {
-    return new CommonResult<>(HttpStatus.HTTP_INTERNAL_ERROR, "服务器异常", null);
+    return error("服务器异常");
   }
 
   /**
@@ -78,6 +78,17 @@ public class CommonResult<T> {
    * @return 失败消息
    */
   public static <T> CommonResult<T> error(String msg) {
-    return new CommonResult<>(HttpStatus.HTTP_INTERNAL_ERROR, msg, null);
+    return error(HttpStatus.HTTP_INTERNAL_ERROR, msg);
+  }
+
+  /**
+   * 返回失败消息
+   *
+   * @param code 状态码
+   * @param msg  提示语
+   * @return 失败消息
+   */
+  public static <T> CommonResult<T> error(int code, String msg) {
+    return new CommonResult<>(code, msg, null);
   }
 }

@@ -16,6 +16,6 @@ public class IndexController {
 
   @GetMapping("/")
   public CommonResult<String> index() {
-    return CommonResult.error("Hello World");
+    return CommonResult.ok("Hello World");
   }
 }
