@@ -1,0 +1,25 @@
+# 数据源配置
+spring:
+  datasource:
+    # 数据库驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库连接地址
+    url: jdbc:mysql://127.0.0.1:3306/lantian-boot?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    # 数据库连接用户名
+    username: root
+    # 数据库连接密码
+    password: 123456
+
+# mybatis-plus配置
+mybatis-plus:
+  # 全局配置
+  global-config:
+    # 关闭banner
+    banner: false
+    # 数据库配置
+    db-config:
+      # 主键策略
+      id-type: ASSIGN_ID
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
