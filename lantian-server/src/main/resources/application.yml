@@ -17,7 +17,28 @@ server:
       max: 200
       # 请求处理线程的最小数量，默认为10
       min-spare: 10
+# spring配置
 spring:
   profiles:
     # 激活的配置文件
     active: dev
+  jackson:
+    # 时区
+    time-zone: GMT+8
+    # 日期格式
+    date-format: yyyy-MM-dd HH:mm:ss
+# mybatis-plus配置
+mybatis-plus:
+  # 配置mapper.xml文件路径
+  mapper-locations: classpath*:/org/lantian/**/xml/*Mapper.xml
+  # 全局配置
+  global-config:
+    # 关闭banner
+    banner: false
+    # 数据库配置
+    db-config:
+      # 主键策略
+      id-type: ASSIGN_ID
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
