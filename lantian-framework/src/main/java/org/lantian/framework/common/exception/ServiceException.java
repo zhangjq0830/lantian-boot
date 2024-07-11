@@ -1,5 +1,6 @@
 package org.lantian.framework.common.exception;
 
+import cn.hutool.http.HttpStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -30,6 +31,7 @@ public class ServiceException extends RuntimeException {
   private String msg;
 
   public ServiceException(String msg) {
+    this.code = HttpStatus.HTTP_INTERNAL_ERROR;
     this.msg = msg;
   }
 }

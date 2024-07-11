@@ -1,5 +1,6 @@
 package org.lantian.system.controller;
 
+import org.lantian.framework.common.exception.ServiceException;
 import org.lantian.framework.common.utils.CommonResult;
 import org.lantian.system.entity.IndexEntity;
 import org.lantian.system.mapper.IndexMapper;
@@ -25,8 +26,12 @@ public class IndexController {
 
   @GetMapping("/")
   public CommonResult<List<IndexEntity>> index() {
-    List<IndexEntity> entityList = indexMapper.selectList(null);
-    return CommonResult.ok(entityList);
+    try {
+      int i = 1 / 0;
+    } catch (Exception e) {
+      throw new ServiceException("adijwij");
+    }
+    return CommonResult.ok("Hello world");
   }
 
   @GetMapping("/{id}")

@@ -25,7 +25,7 @@ public class AddressUtils {
   public static final String UNKNOWN = "未知";
 
 
-  public static String getRealAddressByIP(String ip) {
+  public static String getRealAddressByIp(String ip) {
     // 内网不查询
     if (NetUtil.isInnerIP(ip)) {
       return "内网IP";
