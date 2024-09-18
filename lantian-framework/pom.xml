@@ -51,6 +51,7 @@
       <artifactId>mysql-connector-j</artifactId>
     </dependency>
 
+    <!-- MyBatis-Plus支持，简化代码 -->
     <dependency>
       <groupId>com.baomidou</groupId>
       <artifactId>mybatis-plus-spring-boot3-starter</artifactId>

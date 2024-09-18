@@ -1,15 +1,14 @@
 package org.lantian.system.controller;
 
-import org.lantian.framework.common.exception.ServiceException;
+import jakarta.annotation.Resource;
 import org.lantian.framework.common.utils.CommonResult;
 import org.lantian.system.entity.IndexEntity;
 import org.lantian.system.mapper.IndexMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import javax.sql.DataSource;
 
 
 /**
@@ -21,17 +20,15 @@ import java.util.List;
 @RestController
 public class IndexController {
 
-  @Autowired
+  @Resource
   private IndexMapper indexMapper;
 
+  @Resource
+  private DataSource dataSource;
+
   @GetMapping("/")
-  public CommonResult<List<IndexEntity>> index() {
-    try {
-      int i = 1 / 0;
-    } catch (Exception e) {
-      throw new ServiceException("adijwij");
-    }
-    return CommonResult.ok("Hello world");
+  public CommonResult<Class<?>> index() {
+    return CommonResult.ok(dataSource.getClass());
   }
 
   @GetMapping("/{id}")
