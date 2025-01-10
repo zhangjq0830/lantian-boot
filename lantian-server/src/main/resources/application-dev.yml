@@ -27,4 +27,42 @@ spring:
       # 配置一个连接在池中最大生存的时间，单位是毫秒
       max-evictable-idle-time-millis: 900000
       # 配置检测连接是否有效
-      validationQuery: SELECT 1 FROM DUAL
+      validation-query: SELECT 1 FROM DUAL
+      #申请连接前检测连接是否有效
+      test-while-idle: true
+      #申请连接时检测连接是否有效
+      test-on-borrow: false
+      #归还连接时检测连接是否有效
+      test-on-return: false
+      #是否缓存preparedStatement，也就是PSCache
+      pool-prepared-statements: true
+      #PSCache的大小
+      max-pool-prepared-statement-per-connection-size: 20
+      #配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,slf4j
+      #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      # 合并多个DruidDataSource的监控数据
+      use-global-data-source-stat: true
+      web-stat-filter:
+        # 是否启用过滤器
+        enabled: true
+        # 过滤规则
+        url-pattern: /*
+        # 忽略过滤规则
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*.png,*.css,*.ico
+      stat-view-servlet:
+        # 是否启用监控页面
+        enabled: true
+        # 监控页面路径前缀
+        url-pattern: /druid/*
+        # 是否允许重置监控数据
+        reset-enable: false
+        # 监控页面登录用户名
+        login-username: druid
+        # 监控页面登录密码
+        login-password: druid
+        # 允许访问监控页面的用户 IP
+        allow: 127.0.0.1
+        # 拒绝访问监控页面的用户 IP，如果为空，则默认拒绝所有未在 allow 中列出的 IP
+        deny:
