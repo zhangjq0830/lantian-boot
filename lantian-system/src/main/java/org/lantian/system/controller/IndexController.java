@@ -1,8 +1,14 @@
 package org.lantian.system.controller;
 
+import com.alibaba.druid.pool.DruidDataSource;
+import jakarta.annotation.Resource;
 import org.lantian.framework.common.utils.CommonResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Description: 欢迎信息
@@ -13,8 +19,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
+  @Resource
+  private DruidDataSource dataSource;
+
   @RequestMapping("/")
-  public CommonResult<String> index() {
-    return CommonResult.ok("lantian-system");
+  public CommonResult<Map<String, Object>> index() {
+    Map<String, Object> map = new HashMap<>();
+    map.put("initialSize", dataSource.getInitialSize());
+    map.put("maxActive", dataSource.getMaxActive());
+
+    return CommonResult.ok(map);
   }
 }
