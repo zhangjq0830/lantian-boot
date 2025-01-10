@@ -37,7 +37,6 @@ public class AddressUtils {
       paramMap.put("json", true);
       String response = HttpUtil.get(ADDRESS_URL, paramMap);
       if (StrUtil.isBlank(ip)) {
-        log.error("根据IP获取地址异常 {}", ip);
         return UNKNOWN;
       }
       Address address = JSONUtil.toBean(response, Address.class);
