@@ -1,6 +1,6 @@
 # 开发环境配置
 server:
-  # 服务器的HTTP端口，默认为8080
+  # 服务器的HTTP端口，默认为8090
   port: 8090
   servlet:
     # 应用的访问路径
@@ -12,6 +12,7 @@ server:
     max-connections: 8192
     # 连接数满后的排队数，默认为100
     accept-count: 100
+    # Tomcat线程池配置
     threads:
       # 请求处理线程的最大数量，默认为200
       max: 200
