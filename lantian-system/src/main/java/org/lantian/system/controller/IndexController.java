@@ -6,7 +6,6 @@ import org.lantian.framework.common.utils.CommonResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
